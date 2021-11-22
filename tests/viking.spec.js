@@ -250,7 +250,7 @@ describe('War', () => {
     });
   });
 
-  describe('addViking() method', () => {
+  fdescribe('addViking() method', () => {
     it('should be a declared', () => {
       expect(typeof war.addViking).toBe('function');
     });
@@ -288,22 +288,22 @@ describe('War', () => {
     });
   });
 
-  describe('Armies Attack', () => {
+  fdescribe('Armies Attack', () => {
     beforeEach(() => {
       war.addViking(viking);
       war.addSaxon(saxon);
     });
 
-    describe('vikingAttack() method', () => {
-      it('should be a declared', () => {
+    fdescribe('vikingAttack() method', () => {
+      fit('should be a declared', () => {
         expect(typeof war.vikingAttack).toBe('function');
       });
 
-      it('should receive 0 arguments', () => {
+      fit('should receive 0 arguments', () => {
         expect(war.vikingAttack.length).toEqual(0);
       });
 
-      it('should make Saxon receiveDamage() equal to the strength of a Viking', () => {
+      fit('should make Saxon receiveDamage() equal to the strength of a Viking', () => {
         let oldHealth = saxon.health;
         war.vikingAttack();
         expect(saxon.health).toEqual(oldHealth - viking.strength);
